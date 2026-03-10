@@ -199,6 +199,9 @@
   .h-\[50vh\] {
     height: 50vh;
   }
+  .h-screen {
+    height: 100vh;
+  }
   .w-full {
     width: 100%;
   }
@@ -284,6 +287,9 @@
   }
   .pr-0 {
     padding-right: calc(var(--spacing) * 0);
+  }
+  .text-center {
+    text-align: center;
   }
   .text-black {
     color: var(--color-black);

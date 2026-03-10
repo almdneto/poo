@@ -15,9 +15,9 @@
 
 
 </head>
-<body class='bg-purple-950  text-white flex'>
-    <form action="" method="get" class='border-4 border-purple-500 rounded-2xl flex justify-center flex-col items-center gap-4 m-4 p-4'>
-        <div class='relative '>
+<body class='bg-purple-950 h-screen text-white flex'>
+    <form action="" method="get" class='border-4 border-purple-500 rounded-2xl flex justify-center items-center flex-col items-center gap-4 m-4 p-4'>
+        <div class='relative'>
             <label for="n1" class='absolute top-[0] pointer-events-none transition-all duration-500 peer-focus:-top-5'>1º Número</label>
             <input type="number" name="n1" id="n1" class='peer border-b-2 w-full outline-none bg-transparent border-purple-500  '>
         </div>
