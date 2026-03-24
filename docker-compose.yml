@@ -9,13 +9,18 @@ services:
       - ./src:/var/www/html
     networks:
       - rede_projeto
+    # ESSA LINHA AQUI EMBAIXO QUE É O PULO DO GATO
+    entrypoint: 
+      - sh
+      - -c
+      - "docker-php-ext-install pdo pdo_mysql && apache2-foreground"
 
   # AQUI TU MUDA O NOME DO SERVIDOR
   db: 
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: meu_banco
+      MYSQL_DATABASE: tst
       # AQUI TU LIBERA A SENHA VAZIA
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes" 
     ports:

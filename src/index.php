@@ -1,65 +1,24 @@
 <?php
 
-    include "index.class.php";
+require_once "conexion.php";
 
-    $calculadora = new Calculadora();
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
-    <title>Calculadora</title>
-
-
+    <title>Teste</title>
 </head>
-<body class='bg-purple-950 h-screen text-white flex'>
-    <form action="" method="get" class='border-4 border-purple-500 rounded-2xl flex justify-center items-center flex-col items-center gap-4 m-4 p-4'>
-        <div class='relative'>
-            <label for="n1" class='absolute top-[0] pointer-events-none transition-all duration-500 peer-focus:-top-5'>1º Número</label>
-            <input type="number" name="n1" id="n1" class='peer border-b-2 w-full outline-none bg-transparent border-purple-500  '>
-        </div>
-        <div class='relative '>
-            <label for="n2" class='absolute top-[0] pointer-events-none transition-all duration-500 peer-focus:-top-5'>2º Número</label>
-            <input type="number" name="n2" id="n2" class='peer border-b-2 w-full outline-none bg-transparent border-purple-500 '>
-        </div>
-        <div>
-            <label for="operacao">Operação</label>
-            <select name="operacao" id="operacao" class='border-b-2 border-purple-500  '>
-                <option value="soma" class='text-black'>Soma</option>
-                <option value="subtracao" class='text-black'>Subtração</option>
-                <option value="multiplicacao" class='text-black'>Multiplicação</option>
-                <option value="divisao" class='text-black'>Divisão</option>
-            </select>
-        </div>
-        <div>
-            <button type="submit" class='border-2 border-purple-500 rounded-md py-2 px-4'>Calcular</button>
-        </div>
+<body>
+    
+    <h1>Itens</h1>
+
+    <form action="" method="post">
+
     </form>
 
 </body>
 </html>
-
-<?php
- $numero1 = floatval($_GET['n1'] ?? 0);
- $numero2 = floatval($_GET['n2'] ?? 0);
- $operacao = $_GET['operacao'] ?? '';
-
-    switch ($operacao){
-        case 'soma':
-            echo $calculadora->soma($numero1, $numero2);
-            break;
-        case 'subtracao':
-            echo $calculadora->subtracao($numero1, $numero2);
-            break;
-        case 'multiplicacao':
-            echo $calculadora->multiplicacao($numero1, $numero2);
-            break;
-        case 'divisao':
-            echo $calculadora->divisao($numero1, $numero2);
-            break;
-        default:
-            // echo "Operação inválida.";
-    }
