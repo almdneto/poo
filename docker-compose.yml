@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - rede_projeto
+
+  # AQUI TU MUDA O NOME DO SERVIDOR
+  db: 
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: meu_banco
+      # AQUI TU LIBERA A SENHA VAZIA
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes" 
+    ports:
+      - "3306:3306"
+    networks:
+      - rede_projeto
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_ARBITRARY=1
+      # AQUI TEM QUE SER O MESMO NOME QUE TU COLOCOU ACIMA
+      - PMA_HOST=db 
+    networks:
+      - rede_projeto
+
+networks:
+  rede_projeto:
+    driver: bridge
